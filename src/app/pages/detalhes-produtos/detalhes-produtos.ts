@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CardDetalhesProduto } from "../../shared/card-detalhes-produto/card-detalhes-produto";
 import { Header } from "../../shared/header/header";
+import { CardDetalhesProduto } from '../../shared/card-detalhes-produto/card-detalhes-produto';
 
 @Component({
   selector: 'app-detalhes-produtos',
@@ -11,3 +11,4 @@ import { Header } from "../../shared/header/header";
 export class DetalhesProdutos {
 
 }
+ 

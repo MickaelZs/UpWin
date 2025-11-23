@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ProdutosService } from '../../services/produtos';
 import { Produtos } from '../../services/types/type';

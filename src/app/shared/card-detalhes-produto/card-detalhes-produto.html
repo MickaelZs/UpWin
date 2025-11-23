@@ -1,18 +1,17 @@
 <main>
-    <div class="container-produto">
+    <div class="container-produto" *ngIf="produto">
         <div class="galeria-imagens-produto">
-            <img [src]="imagemPrincipal" alt="Imagem principal do produto" class="imagem-principal-produto"
-                alt="Tênis Nike Winflo 11 Masculino">
+            <img [src]="imagemPrincipal" alt="Imagem principal do produto" class="imagem-principal-produto">
             <div class="galeria-miniaturas">
                 <img *ngFor="let imagem of miniaturas" [src]="imagem" (click)="trocarImagemPrincipal(imagem)"
                     [class.ativa]="imagem === imagemPrincipal" class="miniatura" />
             </div>
         </div>
 
-        <div class="detalhes-produto">
-            <h1 class="titulo-produto">Tênis Nike Winflo 11 Masculino</h1>
-            <p class="categoria-produto">Corrida</p>
-            <p class="preco-produto">R$ 474,99 <span class="metodo-pagamento">no Pix</span></p>
+        <div class="detalhes-produto"  >
+            <h1 class="titulo-produto">{{produto.nome}}</h1>
+            <p class="categoria-produto">{{produto.categoria}}</p>
+            <p class="preco-produto">R$ {{produto.valor}} <span class="metodo-pagamento">no Pix</span></p>
 
             <div class="opcoes-cor">
                 <p class="rotulo-opcao">Cores e modelos</p>
@@ -25,7 +24,7 @@
             <div class="opcoes-tamanho">
                 <p class="rotulo-opcao">Tamanho e numeração</p>
                 <div class="botoes-tamanho">
-                    <button class="botao-tamanho">39</button>
+                    <button class="botao-tamanho">{{produto.tamanho}}</button>
                 </div>
             </div>
 
@@ -34,5 +33,5 @@
                 <button class="botao-salvar-favoritos">Salvar como favoritos</button>
             </div>
         </div>
-    </div>
+    </div>  
 </main>
