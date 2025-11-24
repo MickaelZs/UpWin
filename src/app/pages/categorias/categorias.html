@@ -1,5 +1,35 @@
-<app-header></app-header>
+<app-header/>
+<div class="container-mae">
+<h1 class="titulo">Categoria: {{ nomeCategoria }}</h1>
 
-<div>
-    <h1>Nenhum produto cadastrado nesta categoria.</h1>
+<!-- Loading -->
+<div *ngIf="loading">
+  <p>Carregando produtos...</p>
+</div>
+
+
+<div *ngFor="let produto of produtos" class="product-card-container">
+
+<div class="container-produto" >
+   
+    <img
+      class="product-image"
+      src={{produto.imagem1}}
+      alt="Imagem do tênis"
+    />
+    <div class="favorite-icon-container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+    </div>
+  </div>
+
+  <div *ngFor="let produto of produtos"  class="product-details-container" >
+    <p class="product-category">{{produto.categoria}}</p>
+    <h2 class="product-name">{{produto.nome}}</h2>
+    <p class="product-price">{{produto.valor}}</p>
+    <p class="product-installments">ou 12x R$ 91,67 sem juros</p>
+  </div> 
+</div>
+
 </div>

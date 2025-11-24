@@ -16,3 +16,8 @@ export interface Usuarios {
     email: string;
     senha: string;
 }  
+
+export interface Categorias {
+    id: number;
+    nome: string;
+}  

@@ -37,7 +37,7 @@ export const routes: Routes = [
     },
 
     {
-        path: 'categoria',
+        path: 'categoria/:nome',
         component: Categorias,
         title: 'Categorias'
 
@@ -77,7 +77,8 @@ export const routes: Routes = [
         path: 'admin/alterar/:id',
         component: Cadastro,
         title: 'Produto Alterar'
-    }
+    },
+    { path: '**', redirectTo: '' }
 
 ];
 
