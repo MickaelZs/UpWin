@@ -53,7 +53,9 @@ export class CardDetalhesProduto {
 
 
   trocarImagemPrincipal(imagemSelecionada: string): void {
+  console.log("===========================");
   console.log("Imagem clicada:", imagemSelecionada);
+  console.log("===========================");
   this.imagemPrincipal = imagemSelecionada;
   console.log("Imagem principal AGORA:", this.imagemPrincipal);
   this.cdr.detectChanges();
