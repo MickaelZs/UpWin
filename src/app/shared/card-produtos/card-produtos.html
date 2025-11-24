@@ -1,5 +1,5 @@
 
-
+<div class="mae">
 <div *ngFor="let produto of listaProdutos; trackBy: trackById" class="product-card-container">
    <a href="" [routerLink]="['/detalhes-produtos', produto.id]"> <div class="product-image-container" >
     <img
@@ -20,4 +20,5 @@
     <p class="product-price">{{produto.valor}}</p>
     <p class="product-installments">ou 12x R$ 91,67 sem juros</p>
   </div> </a>
+</div>
 </div>

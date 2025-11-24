@@ -17,8 +17,19 @@ a{
 
 .product-image-container {
   position: relative;
-
 }
+
+.mae {
+  width: 100%;
+  max-width: 1400px;     /* impede que abra demais */
+  margin: 0 auto;        /* centraliza no centro da tela */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;   /* cards colam um no outro */
+  gap: 24px;             /* define um espaçamento consistente */
+  padding: 20px;
+}
+
 
 .product-image {
   width: 100%;
