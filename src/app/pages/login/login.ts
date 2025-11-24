@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { Usuarios } from '../../services/types/type';
 import { UsuariosService } from '../../services/usuarios';
+import { log } from 'console';
 
 @Component({
   selector: 'app-login',
@@ -23,36 +24,30 @@ export class Login {
     private service: UsuariosService
   ) { }
 
-  onBotaoClicado() {
-
-    const loginTrim = this.login.trim();
-    const senhaTrim = this.senha.trim();
-
-    if (loginTrim === 'admin' && senhaTrim === '123') {
-      this.router.navigate(['/admin/home']);
-      return;
-    }
-
-    if (loginTrim !== '' && senhaTrim !== '') {
-      this.service.listar().subscribe({
-        next: (usuarios: Usuarios[]) => {
-          const usuarioValido = usuarios.find(u => u.email === loginTrim && u.senha === senhaTrim);
-
-          if (usuarioValido) {
-            alert(`Bem-vindo ${loginTrim}!`);
-            this.router.navigate(['']);
-          } else {
-            alert('Email ou senha inválidos.');
-          }
-        },
-        error: (erro) => {
-          console.error('Erro ao buscar usuários:', erro);
-          alert('Erro ao conectar com o servidor.');
-        }
-      });
-
-    } else {
-      alert('Preencha ambos os campos!');
-    }
+onBotaoClicado() {
+  if (!this.login || !this.senha) {
+    alert("Preencha email e senha.");
+    return;
   }
+
+  const usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
+
+  const usuarioEncontrado = usuarios.find((u: any) =>
+    u.email === this.login && u.senha === this.senha
+  );
+
+  if (!usuarioEncontrado) {
+    alert("Usuário não encontrado. Cadastre-se.");
+
+    this.login = "";
+    this.senha = "";
+
+    return;
+  }
+
+  localStorage.setItem("usuarioLogado", JSON.stringify(usuarioEncontrado));
+  this.router.navigate([""]);
 }
+
+}
+

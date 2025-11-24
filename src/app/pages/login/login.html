@@ -3,40 +3,51 @@
     <div class="container">
       <div class="secao-imagem">
         <div class="seta-voltar" routerLink="">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15.75 19.5L8.25 12l7.5-7.5"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 19.5L8.25 12l7.5-7.5" />
           </svg>
         </div>
-        <img src="https://i.pinimg.com/736x/b5/e2/d4/b5e2d49b6064d314a368d8f39f21794d.jpg" alt="Jogador de tênis se preparando para sacar" />
+
+        <img src="https://i.pinimg.com/736x/b5/e2/d4/b5e2d49b6064d314a368d8f39f21794d.jpg"
+          alt="Jogador de tênis se preparando para sacar" />
       </div>
 
       <div class="secao-formulario">
         <div class="conteudo">
-          <h1>Bem-vindo de volta  </h1>
+          <h1>Bem-vindo de volta</h1>
 
           <form>
             <div class="grupo-input">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" [(ngModel)]="login" placeholder="Exemplo@email.com" required=""/>
+              <input 
+                type="email" 
+                id="email"
+                name="email"
+                [(ngModel)]="login"
+                placeholder="Exemplo@email.com"
+                required />
             </div>
 
             <div class="grupo-input">
               <label for="senha">Senha</label>
-              <input type="password" id="senha" name="senha" [(ngModel)]="senha" placeholder="8 caracteres" required="" />
+              <input 
+                type="password" 
+                id="senha"
+                name="senha"
+                [(ngModel)]="senha"
+                placeholder="8 caracteres"
+                required />
             </div>
 
-            <button type="submit" class="botao-primario" (disabled)="botaoDesabilitado" (click)="onBotaoClicado()" >Entrar</button>
+            <button 
+              type="button"
+              class="botao-primario"
+              [disabled]="!login || !senha"
+              (click)="onBotaoClicado()">
+              Entrar
+            </button>
           </form>
 
           <div class="divisor">
