@@ -36,12 +36,12 @@ export class ProdutosService {
     return this.http.get<Produtos>(this.API + `/${id}`);
   }
 
-    // Buscar produtos por categoria
+    
   buscarPorCategoria(nomeCategoria: string): Observable<Produtos[]> {
     return this.http.get<Produtos[]>(`${this.API}?categoria=${nomeCategoria}`);
   }
 
-  // Listar todas categorias
+ 
   listarCategorias(): Observable<Categorias[]> {
     return this.http.get<Categorias[]>(this.API_CATEGORIAS);
   }

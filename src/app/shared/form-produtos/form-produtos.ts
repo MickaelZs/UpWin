@@ -26,7 +26,7 @@ export class FormProdutos {
      private cdr: ChangeDetectorRef
 
   ) { 
-
+ 
      this.produtoId = this.route.snapshot.params['id'];
      console.log(this.route.snapshot.params)
      console.log(this.produtoId)

@@ -19,6 +19,14 @@ export class CardDetalhesProduto {
   imagemPrincipal: string = '';
   miniaturas: string[] = [];
 
+   AdicionarNoCarrinho() {
+    alert("Produto adicionado com sucesso!");
+  }
+
+  AdicionarAoFavorito() {
+    alert("Produto adicionado como favorito sucesso!");
+  }
+  
   constructor(
     private service: ProdutosService,
     private router: Router,
@@ -50,6 +58,7 @@ export class CardDetalhesProduto {
     }
  
   }
+
 
 
   trocarImagemPrincipal(imagemSelecionada: string): void {
